@@ -20,16 +20,42 @@ let score = 33
     //let score2= true
     let score2= 1 // let score2= "bin" --. true if score2=""--> false
     let bool= Boolean(score2) // it returns true or false not 1 or 0
-    console.log(bool)
+    // console.log(bool)
     
     let someNumber = 33
    // anything to string
 let stringNumber = String(someNumber)
-console.log(typeof(stringNumber))
-console.log(stringNumber); 
+// console.log(typeof(stringNumber))
+// console.log(stringNumber); 
 
 /* operations */
 let value = 3
 let negValue = -value
 // console.log(negValue);
 
+let str1 = "hello"
+let str2 = " binashak"
+
+let str3 = str1 + str2
+// console.log(str3);
+
+// console.log("1" + 2);
+// console.log(1 + "2");
+// console.log("1" + 2 + 2);
+// console.log(1 + 2 + "2");
+
+// console.log( (3 + 4) * 5 % 3);
+
+// console.log(+true);
+// console.log(+"");
+
+let num1, num2, num3
+
+num1 = num2 = num3 = 2 + 2
+
+let Counter = 100
+++Counter;
+console.log(Counter);
+
+// link to study
+// https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-conversion
