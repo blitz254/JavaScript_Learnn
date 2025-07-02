@@ -32,7 +32,7 @@
 
 
 
-// DOM = Document object model
+<!-- // DOM = Document object model
 
 //+++++ inspect +++++
 // console.log(window) returns the entire global object dir
@@ -40,4 +40,122 @@
 // console.log(document)     same
 //console.dir(document)    returns the directory of document
 // document.getElementById('firstHeading')   anything we want this was example we need to check id under h tag.... research more
-// then here we csn manipulate by DOM manipulation----> document.getElementById('firstHeading').innerHTML="<h1>Binashak Mohanty</h1> "
+// then here we csn manipulate by DOM manipulation document.getElementById('firstHeading').innerHTML="<h1>Binashak Mohanty</h1> " -->
+
+
+<!--  in inspect we can search fot and change
+ document.getElementById('title') -->
+<!-- <h1 id=​"title" class=​"heading">​Binashk​</h1>​ -->
+ <!-- document.getElementById('title')
+<h1 id=​"title" class=​"heading">​Binashk​</h1>​
+document.getElementById('title').id
+'title'
+document.getElementById('title').class
+undefined
+document.getElementById('title').className
+'heading'
+document.getElementById('title').getAttribute('id')
+'title'   // set attribute is also there can override-->
+
+<!-- We manipulate by
+ const title= document.getElementById('title')
+ title.style.padding=__
+ title.style.borderRadius=__
+ title.backgroundColor='green' 
+ 
+ title.innerHTML     returns everything including <span> and all
+ title.innerText    gives the contnet which is to be shown on browser
+ but title.textContent gives the entire text including the hidden ones-->
+
+
+<!-- 
+document.querySelector('h2')
+<h2>​Lorem ipsum dolor sit.​</h2>​
+document.querySelector('#title')
+<h1 id=​"title" class=​"heading">​…​</h1>​
+document.querySelector('.heading')
+<h1 id=​"title" class=​"heading">​…​</h1>​
+document.querySelector('input[type="password"]')
+<input type=​"password" name id fdprocessedid=​"rzddd">​
+document.querySelector('ul')
+<ul>​…​</ul>​
+const myul = document.querySelector('ul')
+undefined
+myul.querySelectorAll
+ƒ querySelectorAll() { [native code] }
+myul.querySelector('li')
+<li class=​"list-item">​…​</li>​
+const tg= myul.querySelector('li')
+undefined
+tg.style.backgroundColor="green"
+'green'
+tg.style.padding="10px"
+
+'10px'
+tg.style.padding="7px"
+'7px'
+tg.innerText="five"
+'five'
+document.querySelectorAll('li') 
+NodeList(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+const tempList = document.querySelectorAll('li') 
+undefined
+/*
+NodeList and HTMLCollection are both array-like objects, but they are different:
+- NodeList is returned by methods like querySelectorAll and can be static or live.
+- HTMLCollection is a live collection of elements, returned by methods like getElementsByClassName.
+NodeList does have a forEach method in modern browsers, but older browsers may not support it.
+If you need to use forEach on a NodeList in all environments, you can convert it to an array:
+Array.from(tempList).forEach(item => {
+    // your code here
+});
+document.querySelectorAll('li') 
+NodeList(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+const tempList = document.querySelectorAll('li') 
+undefined
+tempList
+NodeList(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+tempList.style.color= 'green'
+VM1464:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:21
+(anonymous) @ VM1464:1Understand this error
+tempList[0].style.color= 'green'
+
+'green'
+tempList[2].style.color= 'green'
+
+
+'green'
+tempList.forEach(function(l) {})
+undefined
+tempList.forEach(function(l) {
+    l.style.backgroundColor= 'blue'
+})
+
+undefined
+document.getElementsByClassName('list-item')
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+const temp= document.getElementsByClassName('list-item')
+undefined
+temp
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()[[Prototype]]: Object
+temp.forEach(function(l) {
+    l.style.backgroundColor= 'blue'
+})
+VM1753:1 Uncaught TypeError: temp.forEach is not a function
+    at <anonymous>:1:6
+(anonymous) @ VM1753:1Understand this error
+// classname wala doesnot take foreach
+undefined
+Array.from(temp)
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemaccessKey: ""ariaActiveDescendantElement: nullariaAtomic: nullariaAutoComplete: nullariaBrailleLabel: nullariaBrailleRoleDescription: nullariaBusy: nullariaChecked: nullariaColCount: nullariaColIndex: nullariaColIndexText: nullariaColSpan: nullariaControlsElements: nullariaCurrent: nullariaDescribedByElements: nullariaDescription: nullariaDetailsElements: nullariaDisabled: nullariaErrorMessageElements: nullariaExpanded: nullariaFlowToElements: nullariaHasPopup: nullariaHidden: nullariaInvalid: nullariaKeyShortcuts: nullariaLabel: nullariaLabelledByElements: nullariaLevel: nullariaLive: nullariaModal: nullariaMultiLine: nullariaMultiSelectable: nullariaOrientation: nullariaPlaceholder: nullariaPosInSet: nullariaPressed: nullariaReadOnly: nullariaRelevant: nullariaRequired: nullariaRoleDescription: nullariaRowCount: nullariaRowIndex: nullariaRowIndexText: nullariaRowSpan: nullariaSelected: nullariaSetSize: nullariaSort: nullariaValueMax: nullariaValueMin: nullariaValueNow: nullariaValueText: nullassignedSlot: nullattributeStyleMap: StylePropertyMap {size: 2}attributes: NamedNodeMap {0: class, 1: style, 2: data-darkreader-inline-bgcolor, class: class, style: style, data-darkreader-inline-bgcolor: data-darkreader-inline-bgcolor, length: 3}autocapitalize: ""autofocus: falsebaseURI: "https://ideal-parakeet-v6vppgxrpxpp36grw-5501.app.github.dev/DOM/one.html"childElementCount: 0childNodes: NodeList [text]children: HTMLCollection []classList: DOMTokenList ['list-item', value: 'list-item']className: "list-item"clientHeight: 18clientLeft: 0clientTop: 0clientWidth: 902contentEditable: "inherit"currentCSSZoom: 1dataset: DOMStringMap {darkreaderInlineBgcolor: ''}dir: ""draggable: falseeditContext: nullelementTiming: ""enterKeyHint: ""firstChild: textfirstElementChild: nullhidden: falseid: ""inert: falseinnerHTML: "four"innerText: "four"inputMode: ""isConnected: trueisContentEditable: falselang: ""lastChild: textlastElementChild: nulllocalName: "li"namespaceURI: "http://www.w3.org/1999/xhtml"nextElementSibling: nullnextSibling: textnodeName: "LI"nodeType: 1nodeValue: nullnonce: ""offsetHeight: 18offsetLeft: 48offsetParent: body.bg-blackoffsetTop: 360offsetWidth: 902onabort: nullonanimationend: nullonanimationiteration: nullonanimationstart: nullonauxclick: nullonbeforecopy: nullonbeforecut: nullonbeforeinput: nullonbeforematch: nullonbeforepaste: nullonbeforetoggle: nullonbeforexrselect: nullonblur: nulloncancel: nulloncanplay: nulloncanplaythrough: nullonchange: nullonclick: nullonclose: nulloncommand: nulloncontentvisibilityautostatechange: nulloncontextlost: nulloncontextmenu: nulloncontextrestored: nulloncopy: nulloncuechange: nulloncut: nullondblclick: nullondrag: nullondragend: nullondragenter: nullondragleave: nullondragover: nullondragstart: nullondrop: nullondurationchange: nullonemptied: nullonended: nullonerror: nullonfocus: nullonformdata: nullonfullscreenchange: nullonfullscreenerror: nullongotpointercapture: nulloninput: nulloninvalid: nullonkeydown: nullonkeypress: nullonkeyup: nullonload: nullonloadeddata: nullonloadedmetadata: nullonloadstart: nullonlostpointercapture: nullonmousedown: nullonmouseenter: nullonmouseleave: nullonmousemove: nullonmouseout: nullonmouseover: nullonmouseup: nullonmousewheel: nullonpaste: nullonpause: nullonplay: nullonplaying: nullonpointercancel: nullonpointerdown: nullonpointerenter: nullonpointerleave: nullonpointermove: nullonpointerout: nullonpointerover: nullonpointerrawupdate: nullonpointerup: nullonprogress: nullonratechange: nullonreset: nullonresize: nullonscroll: nullonscrollend: nullonscrollsnapchange: nullonscrollsnapchanging: nullonsearch: nullonsecuritypolicyviolation: nullonseeked: nullonseeking: nullonselect: nullonselectionchange: nullonselectstart: nullonslotchange: nullonstalled: nullonsubmit: nullonsuspend: nullontimeupdate: nullontoggle: nullontransitioncancel: nullontransitionend: nullontransitionrun: nullontransitionstart: nullonvolumechange: nullonwaiting: nullonwebkitanimationend: nullonwebkitanimationiteration: nullonwebkitanimationstart: nullonwebkitfullscreenchange: nullonwebkitfullscreenerror: nullonwebkittransitionend: nullonwheel: nullouterHTML: "<li class=\"list-item\" style=\"background-color: blue; --darkreader-inline-bgcolor: var(--darkreader-background-0000ff, #0000cc);\" data-darkreader-inline-bgcolor=\"\">four</li>"outerText: "four"ownerDocument: documentparentElement: ulparentNode: ulpart: DOMTokenList [value: '']popover: nullprefix: nullpreviousElementSibling: li.list-itempreviousSibling: textrole: nullscrollHeight: 18scrollLeft: 0scrollTop: 0scrollWidth: 902shadowRoot: nullslot: ""spellcheck: truestyle: CSSStyleDeclaration {0: 'background-color', 1: '--darkreader-inline-bgcolor', accentColor: '', additiveSymbols: '', alignContent: '', alignItems: '', alignSelf: '', …}tabIndex: -1tagName: "LI"textContent: "four"title: ""translate: truetype: ""value: 0virtualKeyboardPolicy: ""writingSuggestions: "true"[[Prototype]]: HTMLLIElement(...)length: 4[[Prototype]]: Array(0)at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toReversed: ƒ toReversed()toSorted: ƒ toSorted()toSpliced: ƒ toSpliced()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()with: ƒ with()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}[[Prototype]]: Object
+const con=Array.from(temp)
+undefined
+con
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+con.forEach(function(l) {
+    l.style.backgroundColor= 'red'
+})
+undefined
+
+*/ -->
