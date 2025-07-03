@@ -108,7 +108,7 @@ if (playGame) {
     validateGuess(guess);
   });
 }
-
+// always use a validation function
 function validateGuess(guess) {
   if (isNaN(guess)) {
     alert('PLease enter a valid number');
