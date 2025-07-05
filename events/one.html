@@ -27,27 +27,28 @@
      // attachEvent()
     // jQuery - on
 
-    // type, timestamp, defaultPrevented
+    // type, timestamp, preventDefault
     // target, toElement, srcElement, currentTarget,
     // clientX, clientY, screenX, screenY
     // altkey, ctrlkey, shiftkey, keyCode
 
     // document.getElementById('images').addEventListener('click', function(e){
     //     console.log("clicked inside the ul");
-    // }, false)
+    // }, false)   //false is default parameter
+      
 
     // document.getElementById('owl').addEventListener('click', function(e){
     //     console.log("owl clicked");
-    //     e.stopPropagation()
+    //     e.stopPropagation()          // basicallly if we donot stop it, when owl will be clicked bpth will appear owl clicked then clicked inside ul
     // }, false)
     
     // document.getElementById('google').addEventListener('click',function(e){
-    //     e.preventDefault();
-    //     e.stopPropagation()
+    //     e.preventDefault();       // google link will not be opened
+    //     e.stopPropagation()      // bubbling stopped
     //     console.log("google clicked");
     // }, false)
    
-    
+    // images will disappear after clicking
     document.querySelector('#images').addEventListener('click', function(e){
         console.log(e.target.tagName);
         if (e.target.tagName === 'IMG') {
